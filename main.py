@@ -1,21 +1,25 @@
-line = input()
+# 读取输入
+s = input()
 
-letter = 0
-digit = 0
-space = 0
-other = 0
+# 初始化计数器
+letters = 0
+digits = 0
+spaces = 0
+others = 0
 
-for c in line:
+# 遍历每个字符
+for c in s:
     if c.isalpha():
-        letter += 1
+        letters += 1
     elif c.isdigit():
-        digit += 1
+        digits += 1
     elif c.isspace():
-        space += 1
+        spaces += 1
     else:
-        other += 1
+        others += 1
 
-print(f"英文字符: {letter}")
-print(f"数字: {digit}")
-print(f"空格: {space}")
-print(f"其他字符: {other}")
+# 输出结果（使用基础字符串格式化，避免f-string可能的问题）
+print("英文字符: %d" % letters)
+print("数字: %d" % digits)
+print("空格: %d" % spaces)
+print("其他字符: %d" % others)
