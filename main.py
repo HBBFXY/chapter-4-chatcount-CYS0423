@@ -1,24 +1,22 @@
-s = input()
+# main.py
+input_str = input("")
 
-letter = 0
-digit = 0
-space = 0
-other = 0
+letters = 0
+digits = 0
+spaces = 0
+others = 0
 
-i = 0
-while i < len(s):
-    c = s[i]
-    if (c >= 'a' and c <= 'z') or (c >= 'A' and c <= 'Z'):
-        letter += 1
-    elif c >= '0' and c <= '9':
-        digit += 1
-    elif c == ' ':
-        space += 1
+for char in input_str:
+    if char.isalpha():
+        letters += 1
+    elif char.isdigit():
+        digits += 1
+    elif char.isspace():
+        spaces += 1
     else:
-        other += 1
-    i += 1
+        others += 1
 
-print("英文字符: " + str(letter))
-print("数字: " + str(digit))
-print("空格: " + str(space))
-print("其他字符: " + str(other))
+print(f"英文字符: {letters}")
+print(f"数字: {digits}")
+print(f"空格: {spaces}")
+print(f"其他字符: {others}")
