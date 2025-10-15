@@ -1,25 +1,29 @@
-# 读取输入
 s = input()
 
-# 初始化计数器
 letters = 0
 digits = 0
 spaces = 0
 others = 0
 
-# 遍历每个字符
-for c in s:
-    if c.isalpha():
+i = 0
+while i < len(s):
+    c = s[i]
+    # 检查是否为英文字符
+    if (c >= 'a' and c <= 'z') or (c >= 'A' and c <= 'Z'):
         letters += 1
-    elif c.isdigit():
+    # 检查是否为数字
+    elif c >= '0' and c <= '9':
         digits += 1
-    elif c.isspace():
+    # 检查是否为空格
+    elif c == ' ':
         spaces += 1
+    # 其他字符
     else:
         others += 1
+    i += 1
 
-# 输出结果（使用基础字符串格式化，避免f-string可能的问题）
-print("英文字符: %d" % letters)
-print("数字: %d" % digits)
-print("空格: %d" % spaces)
-print("其他字符: %d" % others)
+# 严格按照指定格式输出
+print("英文字符: " + str(letters))
+print("数字: " + str(digits))
+print("空格: " + str(spaces))
+print("其他字符: " + str(others))
