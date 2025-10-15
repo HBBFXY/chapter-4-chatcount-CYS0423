@@ -1,35 +1,15 @@
-s = input()
+s=input()
+l=d=sp=o=0
+i=0
+while i<len(s):
+    c=s[i]
+    if 'a'<=c<='z' or 'A'<=c<='Z':l+=1
+    elif '0'<=c<='9':d+=1
+    elif c==' ':sp+=1
+    else:o+=1
+    i+=1
+print("英文字符: "+str(l))
+print("数字: "+str(d))
+print("空格: "+str(sp))
+print("其他字符: "+str(o))
 
-letters = 0
-digits = 0
-spaces = 0
-others = 0
-
-i = 0
-n = len(s)
-while i < n:
-    c = s[i]
-    
-    # 检查小写字母
-    if c >= 'a' and c <= 'z':
-        letters = letters + 1
-    # 检查大写字母
-    elif c >= 'A' and c <= 'Z':
-        letters = letters + 1
-    # 检查数字
-    elif c >= '0' and c <= '9':
-        digits = digits + 1
-    # 检查空格
-    elif c == ' ':
-        spaces = spaces + 1
-    # 其他字符
-    else:
-        others = others + 1
-        
-    i = i + 1
-
-# 输出结果，使用最基础的字符串拼接
-print("英文字符: " + str(letters))
-print("数字: " + str(digits))
-print("空格: " + str(spaces))
-print("其他字符: " + str(others))
