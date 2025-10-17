@@ -1,27 +1,27 @@
 # 字符统计程序
 # 从键盘输入一行字符
-line = input("请输入一行字符：")
+input_str = input("请输入一行字符：")
 
 # 初始化计数器
-letters = 0    # 英文字符
-digits = 0     # 数字
-spaces = 0     # 空格
-others = 0     # 其他字符
+letter_count = 0  # 英文字符计数器
+digit_count = 0   # 数字计数器
+space_count = 0   # 空格计数器
+other_count = 0   # 其他字符计数器
 
 # 遍历每个字符并统计
-for char in line:
+for char in input_str:
     if char.isalpha():
-        letters += 1
+        letter_count += 1
     elif char.isdigit():
-        digits += 1
-    elif char.isspace():
-        spaces += 1
+        digit_count += 1
+    elif char == ' ':
+        space_count += 1
     else:
-        others += 1
+        other_count += 1
 
 # 按照要求的格式输出结果
-print(f"英文字符: {letters}")
-print(f"数字: {digits}")
-print(f"空格: {spaces}")
-print(f"其他字符: {others}")
+print(f"英文字符: {letter_count}")
+print(f"数字: {digit_count}")
+print(f"空格: {space_count}")
+print(f"其他字符: {other_count}")
     
