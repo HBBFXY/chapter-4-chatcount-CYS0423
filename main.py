@@ -1,21 +1,29 @@
-input_str = input("请输入一行字符：")
-letter_count = 0  
-digit_count = 0  
-space_count = 0   
-other_count = 0  
+import sys
 
-for char in input_str:
-    if char.isalpha():
-        letter_count += 1
-    elif char.isdigit():
-        digit_count += 1
-    elif char == ' ':
-        space_count += 1
-    else:
-        other_count += 1
+def main():
 
-print(f"英文字符: {letter_count}")
-print(f"数字: {digit_count}")
-print(f"空格: {space_count}")
-print(f"其他字符: {other_count}")
+    text = input().strip('\n')
     
+
+    english_chars = 0  
+    digits = 0         
+    spaces = 0         
+    others = 0         
+
+    for char in text:
+        if char.isalpha(): 
+            english_chars += 1
+        elif char.isdigit(): 
+            digits += 1
+        elif char.isspace():  
+            spaces += 1
+        else:
+            others += 1
+
+    print(f"英文字符: {english_chars}")
+    print(f"数字: {digits}")
+    print(f"空格: {spaces}")
+    print(f"其他字符: {others}")
+
+if __name__ == "__main__":
+    main()
