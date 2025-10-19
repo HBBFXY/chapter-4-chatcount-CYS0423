@@ -1,25 +1,25 @@
-def count_characters(input_string):
-    letter_count = 0
-    digit_count = 0
-    space_count = 0
-    other_count = 0
+# 从键盘输入一行字符
+s = input()
 
-    for char in input_string:
-        if char.isalpha():
-            letter_count += 1
-        elif char.isdigit():
-            digit_count += 1
-        elif char.isspace():
-            space_count += 1
-        else:
-            other_count += 1
+# 初始化各类字符计数器
+letters = 0  # 英文字符
+digits = 0   # 数字
+spaces = 0   # 空格
+others = 0   # 其他字符
 
-    return letter_count, digit_count, space_count, other_count
+# 遍历每个字符进行统计
+for c in s:
+    if c.isalpha():
+        letters += 1
+    elif c.isdigit():
+        digits += 1
+    elif c == ' ':
+        spaces += 1
+    else:
+        others += 1
 
-def main():
-    input_string = input("请输入一行字符: ")
-    letters, digits, spaces, others = count_characters(input_string)
-    print(f"英文字符:{letters} 数字:{digits} 空格:{spaces} 其他字符:{others}")
-
-if __name__ == "__main__":
-    main()
+# 按照要求格式输出结果
+print(f"英文字符: {letters}")
+print(f"数字: {digits}")
+print(f"空格: {spaces}")
+print(f"其他字符: {others}")
